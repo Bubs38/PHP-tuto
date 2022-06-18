@@ -1,11 +1,13 @@
-<?php require 'header.php'; ?>
+<?php 
+$title = "Page d'accueil";
+require 'header.php'; 
+?>
+
+<div class="starter-template">
+  <h1>Bootstrap starter template</h1>
+  <p class="lead">Use this document as a way to quickly start any new project.<br> All you get is this text and a mostly barebones HTML document.</p>
+</div>
+
+<?php require 'footer.php'; ?>
 
 
-
-<h1>Lorem ipsum dolor sit amet.</h1>
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos dolorum quae magnam officia necessitatibus quod eum aspernatur voluptatibus iste doloremque, commodi ex autem architecto sint.</p>
-
-  <footer>By Bubs</footer>
-  
-</body>
-</html>
