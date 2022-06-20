@@ -1,4 +1,6 @@
 <?php
+
+// Nav
 function nav_item (string $lien, string $titre, string $linkClass = ''): string 
 {
     $classe = 'nav-item';
@@ -20,6 +22,7 @@ function nav_menu (string $linkClass = ''): string
         nav_item('/jeu.php', 'Jeu', $linkClass);
 }
 
+// Créateur glace
 function checkbox(string $name, string $value, array $data): string {
     $attributes = '';
     if (isset($data[$name]) && in_array($value, $data[$name]) ) {
@@ -39,6 +42,16 @@ function radio(string $name, string $value, array $data): string {
     <input type="radio" name="$name" value="$value" $attributes>
     HTML;
 }
+
+// Créneaux
+function creneaux_html(array $creneaux) {
+    $phrase = [];
+    foreach ($creneaux as $creneau) {
+        $phrases[] = " <strong>{$creneau[0]}h</strong> à <strong>{$creneau[1]}h</strong>.";
+    }
+    return 'Ouvert de' . implode(' et ', $phrases);
+}
+
 
 function dump ($variable) {
     echo '<pre>';
