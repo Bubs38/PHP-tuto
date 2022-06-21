@@ -2,7 +2,11 @@
 $title = "Nous contacter";
 require_once 'config.php';
 require_once 'functions.php';
-$creneaux = creneaux_html(CRENEAUX);
+date_default_timezone_set('Europe/Paris');
+$heure = (int)date('G');
+$creneaux = CRENEAUX[(int)date('N') - 1];
+$ouvert = in_creneaux($heure, $creneaux);
+$color = $ouvert ? 'green' : 'red';
 require 'header.php'; 
 ?>
 
@@ -15,7 +19,23 @@ require 'header.php';
   </div>
   <div class="col-md-4">
     <h2>Horaires d'ouverture</h2>
-    <?= $creneaux ?>
+    <?php if ($ouvert): ?>
+      <div class="alert alert-success">
+        Le magasin est ouvert
+      </div>
+    <?php else: ?>
+      <div class="alert alert-danger">
+        Le magasin est fermé
+      </div>
+    <?php endif ?>
+    <ul>
+      <?php foreach(JOURS as $k => $jour): ?>
+        <li <?php if ($k + 1 === (int)date('N')):?> style="color:<?= $color ?>" <?php endif?>>
+        <strong><?= $jour ?></strong>
+        <?= creneaux_html(CRENEAUX[$k]); ?>
+      </li>
+      <?php endforeach; ?>
+    </ul>
   </div>
 </div>
 
