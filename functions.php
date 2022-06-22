@@ -44,6 +44,11 @@ function radio(string $name, string $value, array $data): string {
 }
 
 // Créneaux
+
+function select(string $name, $value, array $options): string {
+    
+}
+
 function creneaux_html(array $creneaux) {
     if (empty($creneaux)) {
         return 'Fermé';
@@ -73,4 +78,6 @@ function in_creneaux (int $heure, array $creneaux): bool {
     }
     return false;
 }
+
+
 ?>
