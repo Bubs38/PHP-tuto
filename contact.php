@@ -35,11 +35,11 @@ require 'header.php';
 
     <form action="" method="GET">
       <div class="form-group">
-        <?= select('jour', $jour, )
-        <select class="form-control" name="jour">
-          <?php foreach (JOURS as $k => $jour): ?>
+        <?= select('jour', $jour, JOURS) ?>
+        
+          <!-- <?php foreach (JOURS as $k => $jour): ?>
             <option value="<?= $k ?>"><?= $jour ?></option>
-            <?php endforeach ?>
+            <?php endforeach ?> -->
           </select>
       </div>
       <div class="form-group">
