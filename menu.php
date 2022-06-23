@@ -1,21 +1,35 @@
 <?php
-if (!function_exists('nav_item')) {
+require_once "functions.php";
+$title = "Notre Menu";
+$lignes = file(__DIR__ . DIRECTORY_SEPARATOR .'data' . DIRECTORY_SEPARATOR . 'menu.csv');
 
-    function nav_item (string $lien, string $titre, string $linkClass = ''): string 
-    {
-        $classe = 'nav-item';
-        if ($_SERVER['SCRIPT_NAME'] === $lien) {
-            $classe .= ' active';
-        }
-        return <<<HTML
-        <li class="$classe">
-            <a class="$linkClass" href="$lien">$titre</a>
-        </li>
-HTML;
-    }
-
+foreach($lignes as $k => $ligne) {
+  $lignes[$k] = str_getcsv(trim($ligne, " \t\n\r\0\x0B,"));
 }
+require 'elements/header.php';
 ?>
 
-<?= nav_item('/index.php', 'Accueil', $class); ?>
-<?= nav_item('/contact.php', 'Contact', $class); ?>
+
+<h1>Menu</h1>
+
+<?php foreach ($lignes as $ligne): ?>
+
+  <?php if (count($ligne) === 1): ?>
+    <h2><?= $ligne[0] ?></h2>
+  <?php else : ?>
+    <div class="row">
+      <div class="col-sm-8">
+        <p>
+          <strong><?= $ligne[0]; ?></strong><br>
+          <?= $ligne[1]; ?>
+        </p>
+      </div>
+      <div class="col-sm-4">
+        <strong><?= number_format($ligne[2], 2, ',', ' '); ?> €</strong>
+      </div>
+    </div>
+  <?php endif; ?>
+
+<?php endforeach; ?>
+
+<?php require "elements/footer.php"; ?>
