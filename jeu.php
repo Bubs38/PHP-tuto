@@ -38,7 +38,7 @@ foreach (['parfum', 'supplement', 'cornet'] as $name) {
         }
     }
 }
-require 'header.php';
+require 'elements/header.php';
 ?>
 
 <h1>Composer votre glace</h1>
@@ -93,7 +93,7 @@ require 'header.php';
     </div>
 </div>
 
-<h2>$_GET</h2>
+<!-- <h2>$_GET</h2>
 <pre>
 <?php var_dump($_GET) ?>
 </pre>
@@ -101,7 +101,7 @@ require 'header.php';
 <h2>$_POST</h2>
 <pre>
 <?php var_dump($_POST) ?>
-</pre>
+</pre> -->
 
 
-<?php require 'footer.php' ?>
+<?php require 'elements/footer.php' ?>
