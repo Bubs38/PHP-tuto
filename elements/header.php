@@ -1,7 +1,6 @@
 <?php 
 require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php'; 
-?>
-<!doctype html>
+?><!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -32,7 +31,7 @@ require_once dirname(__DIR__) . DIRECTORY_SEPARATOR . 'functions.php';
 
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
-            <?= nav_menu ('nav-link') ?>
+            <?= nav_menu('nav-link') ?>
         </ul>
       </div>
     </nav>
