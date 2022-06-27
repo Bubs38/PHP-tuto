@@ -1,5 +1,9 @@
 <?php 
-require 'functions/compteur.php';
+require_once 'functions/auth.php';
+
+force_utilisateur_connecte();
+
+require_once 'functions/compteur.php';
 $annee = (int)date('Y');
 $annee_selection = empty($_GET['annee']) ? null : (int)$_GET['annee'];
 $mois_selection = empty($_GET['mois']) ? null : $_GET['mois'];
@@ -23,7 +27,7 @@ $mois = [
     '11' => 'Novembre',
     '12' => 'Décembre'
 ];
-require 'elements/header.php'; 
+require_once 'elements/header.php'; 
 ?>
 
 <div class="row">
