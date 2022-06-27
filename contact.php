@@ -1,5 +1,4 @@
 <?php 
-session_start();
 $title = "Nous contacter";
 require_once 'data/config.php';
 require_once 'functions.php';
@@ -14,12 +13,12 @@ require 'elements/header.php';
 
 <div class="row">
     <div class="col-md-8">
-        <h2>Debug</h2>
-        <pre>
-            <?php var_dump($_SESSION)?>
-        </pre>
-        <h2>Nous contacter</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eveniet similique blanditiis iusto voluptas illo accusantium aperiam quas mollitia! Nobis optio provident tenetur ad ipsam quibusdam impedit voluptatibus doloribus rerum.</p>
+    <h2>Debug</h2>
+    <pre>
+        <?php var_dump($_SESSION); ?>
+    </pre>
+    <h2>Nous contacter</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam eveniet similique blanditiis iusto voluptas illo accusantium aperiam quas mollitia! Nobis optio provident tenetur ad ipsam quibusdam impedit voluptatibus doloribus rerum.</p>
     </div>
     <div class="col-md-4">
         <h2>Horaire d'ouvertures</h2>
